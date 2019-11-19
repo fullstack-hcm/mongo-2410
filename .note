@@ -1,0 +1,40 @@
+use [database_name]
+show collections
+
+db.[collection_name].insert({username: '123', age: 2});
+db.[collection_name].insertMany([
+    {username: '123', age: 2}
+]);
+
+db.[collection_name].deleteOne(filterObj);
+db.[collection_name].deleteMany(filterObj)
+
+db.[collection_name].updateOne({
+    username: 'mern2'
+}, {
+    $set: {
+        age: 13
+    }
+}, {
+   upsert: [true, false] 
+})
+
+db.[collection_name].updateMany(filterObj, updateObj, optionalObj);
+
+db.[collection_name].find()
+
+// tìm username: 'a' hoặc tuổi là lớn 10
+db.[collection_name].find({
+    $or: [
+        { username: 'mern_2410' },
+        { age: {
+            $gt: 10
+        } }
+    ]
+})
+
+------------------------------
+JQuery ($)
+    - event (click, change, keyup)
+    - selector ('#', '.')
+    - get - set val (val, attr)
